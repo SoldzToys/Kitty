@@ -1,0 +1,1 @@
+worker: node mail.js
