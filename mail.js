@@ -32,7 +32,9 @@ client.on('message', async (message) => {
   
 if (message.content === `${prefix}cat`) {
     let { body } = await request.get('https://aws.random.cat/meow');
-     message.channel.send(body.file);
+  .setColor("#7289da")
+.setTitle("Cat :cat:")
+.setImage(body.file);
 }
     
     });     
