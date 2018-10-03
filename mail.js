@@ -14,8 +14,7 @@ client.on('message', message => {
     if (message.content === `${prefix}hello`) {
     message.channel.send(`Meow.`);
    }
-   
-     if (message.content === `${prefix}help`) {
+    if (message.content === `${prefix}help`) {
     message.channel.send(`Commands: +hello, +meow, +cat`)
     message.react("🐱");
     
