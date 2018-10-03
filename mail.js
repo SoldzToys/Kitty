@@ -16,7 +16,7 @@ client.on('message', message => {
    }
    
      if (message.content === `${prefix}help`) {
-    message.channel.send(`+hello, +meow, +cat`)
+    message.channel.send(`Commands: +hello, +meow, +cat`)
     message.react("🐱");
     
   }
