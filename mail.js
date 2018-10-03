@@ -32,7 +32,11 @@ client.on('message', async (message) => {
   
 if (message.content === `${prefix}cat`) {
     let { body } = await request.get('https://aws.random.cat/meow');
-message.channel.send(body.file);
+  let dogembed = new Discord.RichEmbed()
+.setColor("#7289da")
+.setTitle("Cat :cat:")
+.setImage(body.file);
+message.channel.send(dogembed);
 }
     
     });     
