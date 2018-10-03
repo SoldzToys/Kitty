@@ -20,7 +20,7 @@ client.on('message', async (message) => {
     message.channel.send(`Meow meow~!`);
    }
     if (message.content === `${prefix}help`) {
-    message.channel.send(`Commands: +hello, +meow, +cat`)
+    message.channel.send(`Commands: +hello, +meow, +cat, +ping`)
     message.react("🐱");
     
   }
