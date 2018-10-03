@@ -31,7 +31,7 @@ client.on('message', async (message) => {
     }
   
 if (message.content === `${prefix}cat`) {
-     request.get('https://aws.random.cat/meow');
+    let { body } = await request.get('https://aws.random.cat/meow');
      message.channel.send(body.file);
 }
     
