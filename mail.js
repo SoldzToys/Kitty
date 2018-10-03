@@ -9,10 +9,10 @@ client.user.setActivity('with her +help string toy');
 
 });
 
-client.on('message', message => {
+client.on('message', async (message) => {
   
     if (message.content === `${prefix}hello`) {
-    message.channel.send(`Meow.`);
+    message.channel.send(`Meow meow~!`);
    }
     if (message.content === `${prefix}help`) {
     message.channel.send(`Commands: +hello, +meow, +cat`)
@@ -25,7 +25,7 @@ client.on('message', message => {
       
     }
   
-  if (message.content === `${prefix}cat`) {
+if (message.content === `${prefix}cat`) {
      request.get('https://aws.random.cat/meow');
      message.channel.send(body.file);
 }
