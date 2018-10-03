@@ -24,6 +24,11 @@ client.on('message', message => {
     message.channel.send(`Bark!`);
       
     }
+  
+  if (message.content === `${prefix}cat`) {
+     request.get('https://aws.random.cat/meow');
+     message.channel.send(body.file);
+}
     
     });     
 client.login(process.env.BOT_TOKEN);
