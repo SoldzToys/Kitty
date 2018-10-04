@@ -21,9 +21,9 @@ client.on('message', async (message) => {
    }
     if (message.content === `${prefix}help`) {
         let dogembed = new Discord.RichEmbed()
-        .setDescription("Kitty's Commands 🐱")
-           .setColor("#7289da")
-      .addField(`Commands: +hello, +meow, +cat, +ping`)
+        .setTitle("Kitty's Commands 🐱")
+        .setDescription("Commands: +hello, +meow, +cat, +ping")
+           .setColor("#7289da");
           message.react("🐱");
      message.channel.send(dogembed);
   }
