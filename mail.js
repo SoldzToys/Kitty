@@ -20,9 +20,12 @@ client.on('message', async (message) => {
     message.channel.send(`Meow meow~!`);
    }
     if (message.content === `${prefix}help`) {
-    message.channel.send(`Commands: +hello, +meow, +cat, +ping`)
-    message.react("🐱");
-    
+        let dogembed = new Discord.RichEmbed()
+        .setDescription("Kitty's Commands 🐱")
+           .setColor("#7289da")
+      .addField(`Commands: +hello, +meow, +cat, +ping`)
+          message.react("🐱");
+     message.channel.send(dogembed);
   }
   
     if (message.content === `${prefix}meow`) {
