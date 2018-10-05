@@ -13,7 +13,7 @@ client.user.setActivity('with her +help string toy');
 client.on('message', async (message) => {
   
   if (message.content ===(`${prefix}ping`)) {
-        message.channel.send('Pong! Your ping is `' + `${Date.now() - message.createdTimestamp}` + ' ms`');
+        message.channel.send('🏓 Pong! Your ping is `' + `${Date.now() - message.createdTimestamp}` + ' ms`');
           }
     
     if (message.content === `${prefix}hello`) {
