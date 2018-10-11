@@ -61,6 +61,7 @@ message.channel.send(dogembed);
 
 // When bot leave the server
 client.on('guildDelete', guild => {
+  const bot = bot.guild.channel
   let channel = bot.channels.get("499832353544470539");
 
   const embed = new Discord.RichEmbed()
