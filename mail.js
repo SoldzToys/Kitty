@@ -43,7 +43,8 @@ message.channel.send(dogembed);
 }
   
   client.on('guildCreate', guild => {
-  let channel = client.channels.get("499832353544470539");
+    const bot = bot.guild.channel
+  let channel = bot.channels.get("499832353544470539");
 
   const embed = new Discord.RichEmbed()
       .setColor("#7289da")
@@ -60,7 +61,7 @@ message.channel.send(dogembed);
 
 // When bot leave the server
 client.on('guildDelete', guild => {
-  let channel = client.channels.get("499832353544470539");
+  let channel = bot.channels.get("499832353544470539");
 
   const embed = new Discord.RichEmbed()
       .setColor("#7289da")
