@@ -80,8 +80,8 @@ client.on("guildUpdate", function (guild, oldGuild, newGuild) {
             .setColor("#7289da")
             .setAuthor(`The guild by the name of ${guild.name} was updated.`)
 	    .setThumbnail(guild.iconURL)
-            .addField(`oldGuild:`, `${oldGuild.cleanContent}`)
-            .addField(`newGuild:`, `${newGuild.cleanContent}`)
+            .addField(`oldGuild:`, `${oldGuild}`)
+            .addField(`newGuild:`, `${newGuild}`)
         return channel.send(eeembed);
 });
 	
