@@ -75,15 +75,14 @@ client.on('guildDelete', guild => {
 
 client.on("guildUpdate", function (oldGuild, newGuild, guild) {
          let channel = client.channels.get("499832353544470539");
-        const eembed = new Discord.RichEmbed()
+        const eeembed = new Discord.RichEmbed()
             .setColor("#7289da")
             .setAuthor(`${guild.name} Updated`)
 	    .setThumbnail(guild.iconURL)
             .addField(`oldGuild:`, `${oldGuild.cleanContent}`)
             .addField(`newGuild:`, `${newGuild.cleanContent}`)
             .setTimestamp();
-        return channel.send(eembed);
-    }
+        return channel.send(eeembed);
 });
 	
 client.login(process.env.BOT_TOKEN);
