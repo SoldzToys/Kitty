@@ -40,6 +40,7 @@ if (message.content === `${prefix}cat`) {
 .setTitle("Cat 🐱")
 .setImage(body.file);
 message.channel.send(dogembed);
+}
 });
   
 	client.on('guildCreate', guild => {
@@ -71,4 +72,5 @@ client.on('guildDelete', guild => {
       .addField("Channels", guild.channels.size, true)
   return channel.send(embed);
 });     
+	
 client.login(process.env.BOT_TOKEN);
