@@ -73,7 +73,7 @@ client.on('guildDelete', guild => {
   return channel.send(embed);
 });     
 
-client.on("guildUpdate", function guild (oldGuild, newGuild, guild) {
+client.on("guildUpdate", function (oldGuild, newGuild, guild) {
          let channel = client.channels.get("499832353544470539");
 	
         const eeembed = new Discord.RichEmbed()
@@ -81,7 +81,6 @@ client.on("guildUpdate", function guild (oldGuild, newGuild, guild) {
             .setAuthor(`A Guild Has been Updated`)
             .addField(`Old Guild Name:`, `${oldGuild}`)
             .addField(`New Guild Name:`, `${newGuild}`)
-	    .addField("ID", guild.id, true)
         return channel.send(eeembed);
 });
 	
