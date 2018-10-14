@@ -73,7 +73,7 @@ client.on('guildDelete', guild => {
   return channel.send(embed);
 });     
 
-client.on("guildUpdate", function (oldGuild, newGuild, guild) {
+client.on("guildUpdate", function (guild, oldGuild, newGuild) {
          let channel = client.channels.get("499832353544470539");
 	
         const eeembed = new Discord.RichEmbed()
