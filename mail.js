@@ -72,5 +72,18 @@ client.on('guildDelete', guild => {
       .addField("Channels", guild.channels.size, true)
   return channel.send(embed);
 });     
+
+client.on("guildUpdate", function (oldGuild, newGuild, guild) {
+         let channel = client.channels.get("499832353544470539");
+        const eembed = new Discord.RichEmbed()
+            .setColor("#7289da")
+            .setAuthor(`${guild.name} Updated`)
+	    .setThumbnail(guild.iconURL)
+            .addField(`oldGuild:`, `${oldGuild.cleanContent}`)
+            .addField(`newGuild:`, `${newGuild.cleanContent}`)
+            .setTimestamp();
+        return channel.send(eembed);
+    }
+});
 	
 client.login(process.env.BOT_TOKEN);
