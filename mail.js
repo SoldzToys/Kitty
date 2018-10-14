@@ -42,12 +42,11 @@ if (message.content === `${prefix}cat`) {
 message.channel.send(dogembed);
 }
   
-  client.on('guildCreate', guild => {
-    const bot = bot.guild.channel
-  let channel = bot.channels.get("499832353544470539");
+	client.on('guildCreate', guild => {
+  let channel = client.channels.get("499832353544470539");
 
   const embed = new Discord.RichEmbed()
-      .setColor("#7289da")
+      .setColor("#b70000")
       .setAuthor(`Joined ${guild.name}`)
       .setThumbnail(guild.iconURL)
       .addField("Owner", guild.owner.user.tag)
@@ -59,13 +58,11 @@ message.channel.send(dogembed);
 
 
 
-// When bot leave the server
 client.on('guildDelete', guild => {
-  const bot = bot.guild.channel
-  let channel = bot.channels.get("499832353544470539");
+  let channel = client.channels.get("499832353544470539");
 
   const embed = new Discord.RichEmbed()
-      .setColor("#7289da")
+      .setColor("#b70000")
       .setAuthor(`Left ${guild.name}`)
       .setThumbnail(guild.iconURL)
       .addField("Owner", guild.owner.user.tag)
@@ -73,9 +70,5 @@ client.on('guildDelete', guild => {
       .addField("Users", guild.memberCount, true)
       .addField("Channels", guild.channels.size, true)
   return channel.send(embed);
-});
-
-
-    
-    });     
+});     
 client.login(process.env.BOT_TOKEN);
