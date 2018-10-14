@@ -78,10 +78,21 @@ client.on("guildUpdate", function (oldGuild, newGuild, guild) {
 	
         const eeembed = new Discord.RichEmbed()
             .setColor("#7289da")
-            .setAuthor(`A Guild Has been Updated`)
+            .setAuthor(`${guild} Has been Updated`)
             .addField(`Old Guild Name:`, `${oldGuild}`)
             .addField(`New Guild Name:`, `${newGuild}`)
         return channel.send(eeembed);
+}); 
+
+client.on("guildUnavailable", guild => {
+         let channel = client.channels.get("499832353544470539");
+	
+        const eeeembed = new Discord.RichEmbed()
+            .setColor("#7289da") 
+            .setAuthor(`${guild} has become unavailable.`)
+	    .addField("Owner", guild.owner.user.tag)
+            .addField("ID", guild.id, true)
+        return channel.send(eeeembed);
 });
 	
 client.login(process.env.BOT_TOKEN);
