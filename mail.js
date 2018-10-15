@@ -46,7 +46,7 @@ client.on('message', async (message) => {
     .addField("Guilds", client.guilds.size, true)
     .addField("Users", client.users.size, true)
     .addField("Invite Me!~", "https://bit.ly/2CJLh83", true)
-    .setTimestamp(new Date().getTime();
+    .setTimestamp();
     return message.channel.send(botembed);
   }
   
