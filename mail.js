@@ -42,7 +42,7 @@ client.on('message', async (message) => {
     .setThumbnail(bicon)
     .addField("Bot Name", client.user.username, true)
     .addField("Bot Tag", client.user.tag, true)
-    .addField("Date Of Creation", client.user.createdAt.toLocaleString(), true)
+    .addField("Date Of Creation", client.user.createdAt.new Date(year, monthIndex [, day [, hours [, minutes [, seconds [, milliseconds]]]]]);, true)
     .addField("Guilds", client.guilds.size, true)
     .addField("Users", client.users.size, true)
     .addField("Invite Me!~", "https://bit.ly/2CJLh83", true)
