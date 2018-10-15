@@ -22,7 +22,7 @@ client.on('message', async (message) => {
     if (message.content === `${prefix}help`) {
         let dogembed = new Discord.RichEmbed()
         .setTitle("Kitty's Commands 🐱")
-        .setDescription("Commands: +hello, +meow, +cat, +ping")
+        .setDescription("Commands: +hello, +meow, +cat, +ping, +info")
            .setColor("#7289da");
           message.react("🐱");
      message.channel.send(dogembed);
@@ -32,6 +32,23 @@ client.on('message', async (message) => {
     message.channel.send(`Bark!`);
       
     }
+		if (message.content.startsWith(`${prefix}info`)) {
+
+    let bicon = client.user.displayAvatarURL;
+    let botembed = new Discord.RichEmbed()
+    .setTitle("Bot Information")
+    .setDescription(`Information on Kitty:`)
+    .setColor("#b70000")
+    .setThumbnail(bicon)
+    .addField("Bot Name", client.user.username, true)
+    .addField("Bot Tag", client.user.tag, true)
+    .addField("Date Of Creation", client.user.createdAt.toLocaleString())
+    .addField("Guilds", client.guilds.size, true)
+    .addField("Users", client.users.size, true)
+    .addField("Invite Me!~", "https://bit.ly/2CJLh83", true)
+    .setTimestamp();
+    return message.channel.send(botembed);
+  }
   
 if (message.content === `${prefix}cat`) {
     let { body } = await request.get('https://aws.random.cat/meow');
