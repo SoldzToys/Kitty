@@ -3,6 +3,8 @@ const client = new Discord.Client();
 const request = require('snekfetch');
 const config = require('./botconfig.json');
 const { prefix, token } = require('./botconfig.json');
+const moment = require('moment');
+require('moment-duration-format');
 
 client.on(`ready`, () => {
   console.log(`I am on!`);
@@ -42,10 +44,12 @@ client.on('message', async (message) => {
     .setThumbnail(bicon)
     .addField("Bot Name", client.user.username, true)
     .addField("Bot Tag", client.user.tag, true)
+    .addField("Uptime", moment.duration(client.uptime).format('d[d ]h[h ]m[m ]s[s]'), true)
     .addField("Date Of Creation", client.user.createdAt.toLocaleString(), true)
     .addField("Guilds", client.guilds.size, true)
     .addField("Users", client.users.size, true)
     .addField("Invite Me!~", "https://bit.ly/2CJLh83", true)
+    .setFooter("Made By Soldz (CF)#6819")
     .setTimestamp();
     return message.channel.send(botembed);
   }
