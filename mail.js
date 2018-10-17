@@ -44,6 +44,7 @@ client.on('message', async (message) => {
     .setThumbnail(bicon)
     .addField("Bot Name", client.user.username, true)
     .addField("Bot Tag", client.user.tag, true)
+    .addField("ID", client.user.id, true)
     .addField("Uptime", moment.duration(client.uptime).format('d[d ]h[h ]m[m ]s[s]'), true)
     .addField("Date Of Creation", client.user.createdAt.toLocaleString(), true)
     .addField("Guilds", client.guilds.size, true)
