@@ -39,7 +39,7 @@ client.on('message', async (message) => {
     let bicon = client.user.displayAvatarURL;
     let botembed = new Discord.RichEmbed()
     .setTitle("Bot Information")
-    .setDescription(`Information on Kitty:`)
+    .setDescription(`Information on ${client.user.username}`)
     .setColor("#7289da")
     .setThumbnail(bicon)
     .addField("Bot Name", client.user.username, true)
