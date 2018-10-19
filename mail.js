@@ -14,11 +14,11 @@ client.user.setActivity('with her +help string toy');
 
 client.on('message', async (message) => {
   
-  if (message.content ===(`${prefix}ping`)) {
+if (message.content.toLowerCase().startsWith(`${prefix}ping`)) {
         message.channel.send('🏓 **Pong!** Your ping is `' + `${Date.now() - message.createdTimestamp}` + ' ms`');
           }
     
-    if (message.content === `${prefix}hello`) {
+if (message.content.toLowerCase().startsWith(`${prefix}hello`)) {
     message.channel.send(`Meow meow~!`);
    }
     if (message.content === `${prefix}help`) {
@@ -41,13 +41,12 @@ client.on('message', async (message) => {
 		  let player = message.mentions.members.first() || message.member
                   let user = player.user
 		const sayembed = new Discord.RichEmbed()
-		.setAuthor(`${client.user.tag}`)
-	       .setDescription(`${botmessage}`)
+		.setTitle(`${botmessage}`)
                .setColor("#7289da")
 	       .setFooter(`Requested By ${user.tag}`)
 		 return message.channel.send(sayembed)
 	 }
-		if (message.content.startsWith(`${prefix}info`)) {
+if (message.content.toLowerCase().startsWith(`${prefix}info`)) {
 
     let bicon = client.user.displayAvatarURL;
     let botembed = new Discord.RichEmbed()
@@ -68,7 +67,7 @@ client.on('message', async (message) => {
     return message.channel.send(botembed);
   }
   
-if (message.content === `${prefix}cat`) {
+if (message.content.toLowerCase().startsWith(`${prefix}cat`)) {
     let { body } = await request.get('https://aws.random.cat/meow');
   let dogembed = new Discord.RichEmbed()
 .setColor("#7289da")
