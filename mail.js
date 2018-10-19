@@ -45,7 +45,6 @@ client.on('message', async (message) => {
 	       .setDescription(`${botmessage}`)
                .setColor("#7289da")
 	       .setFooter(`Requested By ${user.tag}`)
-	       message.delete().catch();
 		 return message.channel.send(sayembed)
 	 }
 		if (message.content.startsWith(`${prefix}info`)) {
