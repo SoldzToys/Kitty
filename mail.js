@@ -24,7 +24,7 @@ if (message.content.toLowerCase().startsWith(`${prefix}hello`)) {
     if (message.content === `${prefix}help`) {
         let dogembed = new Discord.RichEmbed()
         .setTitle("Kitty's Commands 🐱")
-        .setDescription("Commands: +hello, +meow, +cat, +ping, +info, +say")
+        .setDescription("Commands: +cat, +hello, +meow, +ping, +info, +say")
            .setColor("#7289da");
           message.react("🐱");
      message.channel.send(dogembed);
