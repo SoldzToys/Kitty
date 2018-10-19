@@ -24,7 +24,7 @@ client.on('message', async (message) => {
     if (message.content === `${prefix}help`) {
         let dogembed = new Discord.RichEmbed()
         .setTitle("Kitty's Commands 🐱")
-        .setDescription("Commands: +hello, +meow, +cat, +ping, +info")
+        .setDescription("Commands: +hello, +meow, +cat, +ping, +info, +say")
            .setColor("#7289da");
           message.react("🐱");
      message.channel.send(dogembed);
@@ -33,7 +33,21 @@ client.on('message', async (message) => {
     if (message.content === `${prefix}meow`) {
     message.channel.send(`Bark!`);
       
-    }
+    } 
+	
+			 if (message.content.toLowerCase().startsWith(`${prefix}say`)) {
+		  let args = message.content.split(/ +/g).slice(1)
+		  let botmessage = args.join(' ')
+		  let player = message.mentions.members.first() || message.member
+                  let user = player.user
+		const sayembed = new Discord.RichEmbed()
+		.setAuthor(`${client.user.tag}`)
+	       .setDescription(`${botmessage}`)
+               .setColor("#7289da")
+	       .setFooter(`Requested By ${user.tag}`)
+	       message.delete().catch();
+		 return message.channel.send(sayembed)
+	 }
 		if (message.content.startsWith(`${prefix}info`)) {
 
     let bicon = client.user.displayAvatarURL;
