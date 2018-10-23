@@ -113,7 +113,7 @@ client.on("guildUpdate", function (oldGuild, newGuild) {
         const eeembed = new Discord.RichEmbed()
             .setColor("#7289da")
             .setThumbnail(gicon)
-            .setAuthor(`A Guild Has been Updated`)
+            .setAuthor(`A Guild Has been Updated`, gicon)
             .addField(`Old Guild Name:`, `${oldGuild}`)
             .addField(`New Guild Name:`, `${newGuild}`)
         return channel.send(eeembed);
