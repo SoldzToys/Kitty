@@ -107,11 +107,12 @@ client.on('guildDelete', guild => {
   return channel.send(embed);
 });     
 
-client.on("guildUpdate", function (oldGuild, newGuild) {
+client.on("guildUpdate", function (oldGuild, newGuild, guild) {
          let channel = client.channels.get("499832353544470539");
 	
         const eeembed = new Discord.RichEmbed()
             .setColor("#7289da")
+            .setThumbnail(guild.iconURL)
             .setAuthor(`A Guild Has been Updated`)
             .addField(`Old Guild Name:`, `${oldGuild}`)
             .addField(`New Guild Name:`, `${newGuild}`)
