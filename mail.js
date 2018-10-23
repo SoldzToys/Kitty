@@ -109,7 +109,7 @@ client.on('guildDelete', guild => {
 
 client.on("guildUpdate", function (oldGuild, newGuild, guild) {
          let channel = client.channels.get("499832353544470539");
-	 let gicon = guild.iconURL;
+	 let gicon = newGuild.guild.iconURL;
         const eeembed = new Discord.RichEmbed()
             .setColor("#7289da")
             .setThumbnail(gicon)
