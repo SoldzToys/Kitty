@@ -99,10 +99,11 @@ message.channel.send(catembed);
     let memeembed = new Discord.RichEmbed()
     .setTitle('Aaaaa')
     .setColor("#7289da")
-    .setImage(body.link);
+    .setImage(body.url);
     message.channel.send(memeembed);
      
 }
+	
      if (message.content.startsWith(`${prefix}panda`)) { 
       let { body } = await request.get(`https://api-to.get-a.life/pandaimg`);
     let pandaembed = new Discord.RichEmbed()
