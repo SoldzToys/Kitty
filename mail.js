@@ -97,7 +97,7 @@ message.channel.send(catembed);
 	     if (message.content.startsWith(`${prefix}meme`)) { 
       let { body } = await request.get(`https://api-to.get-a.life/meme`);
     let memeembed = new Discord.RichEmbed()
-    .setTitle('Meme')
+    .setTitle('Meme 😂')
     .setColor("#7289da")
     .setImage(body.url);
     message.channel.send(memeembed);
