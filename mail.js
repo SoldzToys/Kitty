@@ -76,7 +76,7 @@ if (message.content.startsWith(`${prefix}cat`)) {
 message.channel.send(catembed);
 }
 	 if (message.content.startsWith(`${prefix}bird`)) {
-      let {body} = await request.get(`https://api-to.get-a.life/birbimg`);
+      let { body } = await request.get(`https://api-to.get-a.life/birbimg`);
     let birdembed = new Discord.RichEmbed()
       .setTitle('Birdy 🐦')
     .setColor("#7289da")
@@ -85,8 +85,7 @@ message.channel.send(catembed);
 
 }   
    if (message.content.startsWith(`${prefix}fox`)) { 
-      let {body} = await superagent
-   .get(`https://api-to.get-a.life/foximg`);
+      let { body } = await request.get(`https://api-to.get-a.life/foximg`);
     let foxembed = new Discord.RichEmbed()
     .setTitle('Fox 🦊')
     .setColor("#7289da")
@@ -95,8 +94,7 @@ message.channel.send(catembed);
 
 }   
      if (message.content.startsWith(`${prefix}panda`)) { 
-      let {body} = await superagent
-   .get(`https://api-to.get-a.life/pandaimg`);
+      let { body } = await request.get(`https://api-to.get-a.life/pandaimg`);
     let pandaembed = new Discord.RichEmbed()
     .setTitle('Panda 🐼')
     .setColor("#7289da")
@@ -105,8 +103,7 @@ message.channel.send(catembed);
      
 }
        if (message.content.startsWith(`${prefix}rpanda`)) { 
-      let {body} = await superagent
-   .get('https://api-to.get-a.life/redpandaimg');
+      let { body } = await request.get('https://api-to.get-a.life/redpandaimg');
     let redpandaembed = new Discord.RichEmbed()
     .setTitle('Red Panda 🐼')
     .setColor("#7289da") 
@@ -115,13 +112,12 @@ message.channel.send(catembed);
 
 }   
 	     if (message.content.startsWith(`${prefix}lizard`)) {
-	    const { body } = await superagent
-        .get('https://nekos.life/api/v2/img/lizard')
+      let { body } = await request.get('https://nekos.life/api/v2/img/lizard')
             const lizardembed = new Discord.RichEmbed()
                 .setTitle(`Lizard 🦎`)
                 .setColor("#7289da")
 	        .setImage(body.url)
-            message.channel.send(sfwembed);
+            message.channel.send(lizardembed);
 }
 });
   
