@@ -80,7 +80,7 @@ message.channel.send(catembed);
     let birdembed = new Discord.RichEmbed()
       .setTitle('Birdy 🐦')
     .setColor("#7289da")
-    .setImage(body.url); 
+    .setImage(body.link); 
     message.channel.send(birdembed);
 
 }   
