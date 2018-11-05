@@ -24,7 +24,7 @@ if (message.content.toLowerCase().startsWith(`${prefix}hello`)) {
     if (message.content === `${prefix}help`) {
         let dogembed = new Discord.RichEmbed()
         .setTitle("Kitty's Commands 🐱")
-        .setDescription("Commands: +cat, +lizard, +panda, +rpanda, +bird, +fox, +hello, +meow, +ping, +info, +say")
+        .setDescription("Commands: +cat, +lizard, +panda, +rpanda, +bird, +fox, +hello, +meow, +meme, +ping, +info, +say")
            .setColor("#7289da");
           message.react("🐱");
      message.channel.send(dogembed);
@@ -97,7 +97,7 @@ message.channel.send(catembed);
 	     if (message.content.startsWith(`${prefix}meme`)) { 
       let { body } = await request.get(`https://api-to.get-a.life/meme`);
     let memeembed = new Discord.RichEmbed()
-    .setTitle('Aaaaa')
+    .setTitle('Meme')
     .setColor("#7289da")
     .setImage(body.url);
     message.channel.send(memeembed);
