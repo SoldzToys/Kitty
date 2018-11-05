@@ -24,7 +24,7 @@ if (message.content.toLowerCase().startsWith(`${prefix}hello`)) {
     if (message.content === `${prefix}help`) {
         let dogembed = new Discord.RichEmbed()
         .setTitle("Kitty's Commands 🐱")
-        .setDescription("Commands: +cat, +hello, +meow, +ping, +info, +say")
+        .setDescription("Commands: +cat, +lizard, +panda, +rpanda, +bird, +fox, +hello, +meow, +ping, +info, +say")
            .setColor("#7289da");
           message.react("🐱");
      message.channel.send(dogembed);
@@ -67,13 +67,62 @@ if (message.content.toLowerCase().startsWith(`${prefix}info`)) {
     return message.channel.send(botembed);
   }
   
-if (message.content.toLowerCase().startsWith(`${prefix}cat`)) {
+if (message.content.startsWith(`${prefix}cat`)) {
     let { body } = await request.get('https://aws.random.cat/meow');
-  let dogembed = new Discord.RichEmbed()
+  let catembed = new Discord.RichEmbed()
+ .setTitle("Cat 🐱")
 .setColor("#7289da")
-.setTitle("Cat 🐱")
 .setImage(body.file);
-message.channel.send(dogembed);
+message.channel.send(catembed);
+}
+	 if (message.content.startsWith(`${prefix}bird`)) {
+      let {body} = await superagent
+   .get(`https://api-to.get-a.life/birbimg`);
+    let birdembed = new Discord.RichEmbed()
+      .setTitle('Birdy 🐦')
+    .setColor("#7289da")
+    .setImage(body.link); 
+    message.channel.send(birdembed);
+
+}   
+   if (message.content.startsWith(`${prefix}fox`)) { 
+      let {body} = await superagent
+   .get(`https://api-to.get-a.life/foximg`);
+    let foxembed = new Discord.RichEmbed()
+    .setTitle('Fox 🦊')
+    .setColor("#7289da")
+    .setImage(body.link);
+    message.channel.send(foxembed);
+
+}   
+     if (message.content.startsWith(`${prefix}panda`)) { 
+      let {body} = await superagent
+   .get(`https://api-to.get-a.life/pandaimg`);
+    let pandaembed = new Discord.RichEmbed()
+    .setTitle('Panda 🐼')
+    .setColor("#7289da")
+    .setImage(body.link);
+    message.channel.send(pandaembed);
+     
+}
+       if (message.content.startsWith(`${prefix}rpanda`)) { 
+      let {body} = await superagent
+   .get('https://api-to.get-a.life/redpandaimg');
+    let redpandaembed = new Discord.RichEmbed()
+    .setTitle('Red Panda 🐼')
+    .setColor("#7289da") 
+    .setImage(body.link);
+    message.channel.send(redpandaembed);
+
+}   
+	     if (message.content.startsWith(`${prefix}lizard`)) {
+	    const { body } = await superagent
+        .get('https://nekos.life/api/v2/img/lizard')
+            const lizardembed = new Discord.RichEmbed()
+                .setTitle(`Lizard 🦎`)
+                .setColor("#7289da")
+	        .setImage(body.url)
+            message.channel.send(sfwembed);
 }
 });
   
