@@ -93,6 +93,16 @@ message.channel.send(catembed);
     message.channel.send(foxembed);
 
 }   
+	
+	     if (message.content.startsWith(`${prefix}meme`)) { 
+      let { body } = await request.get(`https://api-to.get-a.life/meme`);
+    let memeembed = new Discord.RichEmbed()
+    .setTitle('Aaaaa')
+    .setColor("#7289da")
+    .setImage(body.link);
+    message.channel.send(memeembed);
+     
+}
      if (message.content.startsWith(`${prefix}panda`)) { 
       let { body } = await request.get(`https://api-to.get-a.life/pandaimg`);
     let pandaembed = new Discord.RichEmbed()
