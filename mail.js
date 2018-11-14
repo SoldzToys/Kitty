@@ -136,6 +136,20 @@ message.channel.send(catembed);
 	        .setImage(body.url)
             message.channel.send(lizardembed);
 }
+	      if (message.content.toLowerCase().startsWith(`${prefix}serverlist`)) {
+      let bicon = client.user.displayAvatarURL;
+    let string = '';
+    client.guilds.forEach(guild => {
+    string += guild.name + '\n';})
+    let bt = client.user.username;
+    let botembed = new Discord.RichEmbed()
+        .setAuthor(`Amount Of Servers: [${client.guilds.size}] `, client.user.displayAvatarURL)
+        .setColor("#7289da")
+        .addField("Servers In", `${string}`)
+        .setTimestamp()
+        .setFooter("Creator's Command" + message.author.username, message.author.avatarURL);
+    message.channel.send(botembed);
+}
 });
   
 	client.on('guildCreate', guild => {
