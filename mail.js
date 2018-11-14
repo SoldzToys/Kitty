@@ -73,7 +73,7 @@ let randomcatfact = catfacts.random();
     let { body } = await request.get('https://aws.random.cat/meow');
   let catembed = new Discord.RichEmbed()
  .setTitle("Cat 🐱")
- .setDescription(`Cat Fact: **${randomcatfact}**`)
+ .setDescription(`Cat Fact: **${randomcatfact}.**`)
 .setColor("#7289da")
 .setImage(body.file);
 message.channel.send(catembed);
