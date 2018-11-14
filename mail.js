@@ -142,7 +142,7 @@ message.channel.send(catembed);
    let guild = member.guild;
     client.guilds.forEach(guild => {
     string += guild.name + '\n';})
-    let bt = client.user.username;  let guild = member.guild;
+    let bt = client.user.username;  
     let botembed = new Discord.RichEmbed()
         .setAuthor(`Amount Of Servers: [${client.guilds.size}] `, client.user.displayAvatarURL)
         .setColor("#7289da")
