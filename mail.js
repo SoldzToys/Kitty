@@ -4,6 +4,7 @@ const request = require('snekfetch');
 const config = require('./botconfig.json');
 const { prefix, token } = require('./botconfig.json');
 const moment = require('moment');
+const catfacts = require('cat-facts');
 require('moment-duration-format');
 
 client.on(`ready`, () => {
@@ -51,7 +52,7 @@ if (message.content.toLowerCase().startsWith(`${prefix}info`)) {
     let bicon = client.user.displayAvatarURL;
     let botembed = new Discord.RichEmbed()
     .setTitle("Bot Information")
-    .setDescription(`Information on ${client.user.username}`)
+    .setDescription(`Information on ${client.user.username}:`)
     .setColor("#7289da")
     .setThumbnail(bicon)
     .addField("Bot Name", client.user.username, true)
@@ -59,7 +60,7 @@ if (message.content.toLowerCase().startsWith(`${prefix}info`)) {
     .addField("ID", client.user.id, true)
     .addField("Uptime", moment.duration(client.uptime).format('d[d ]h[h ]m[m ]s[s]'), true)
     .addField("Date Of Creation", client.user.createdAt.toLocaleString(), true)
-    .addField("Guilds", client.guilds.size, true)
+    .addField("Guilds", client.guilds.size, true) 
     .addField("Users", client.users.size, true)
     .addField("Invite Me To Your Server", "https://bit.ly/2CJLh83", true)
     .setFooter("Made By Soldz (CF)#6819")
@@ -68,9 +69,11 @@ if (message.content.toLowerCase().startsWith(`${prefix}info`)) {
   }
   
 if (message.content.startsWith(`${prefix}cat`)) {
+let randomcatfact = catfacts.random();
     let { body } = await request.get('https://aws.random.cat/meow');
   let catembed = new Discord.RichEmbed()
  .setTitle("Cat 🐱")
+ .setDescription(`Random Cat Fact: **${randomcatfact}**`)
 .setColor("#7289da")
 .setImage(body.file);
 message.channel.send(catembed);
