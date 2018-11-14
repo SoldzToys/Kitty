@@ -140,7 +140,7 @@ message.channel.send(catembed);
       let bicon = client.user.displayAvatarURL;
     let string = '';
     client.guilds.forEach(guild => {
-    string += `Server Name: **${guild.name}**` + ' ' + `ID: **${guild.id}**` + '\n';})
+    string += `Guild: **${guild.name}**` + ' ' + `ID: **${guild.id}**` + '\n';})
     let bt = client.user.username;  
     let botembed = new Discord.RichEmbed()
         .setAuthor(`Amount Of Servers: [${client.guilds.size}] `, client.user.displayAvatarURL)
