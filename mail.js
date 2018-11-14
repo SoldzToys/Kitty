@@ -147,7 +147,7 @@ message.channel.send(catembed);
         .setColor("#7289da")
         .addField("Servers In", `${string}`)
         .setTimestamp()
-        .setFooter("Creator's Command" + message.author.username, message.author.avatarURL);
+        .setFooter("Creator's Command - " + message.author.username, message.author.avatarURL);
     message.channel.send(botembed);
 }
 });
