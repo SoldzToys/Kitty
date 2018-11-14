@@ -145,7 +145,7 @@ message.channel.send(catembed);
     let botembed = new Discord.RichEmbed()
         .setAuthor(`Amount Of Servers: [${client.guilds.size}] `, client.user.displayAvatarURL)
         .setColor("#7289da")
-        .addField("Servers In", `${string}`)
+        .addField("Servers In", `${string} - ID: ${client.guild.id}`)
         .setTimestamp()
         .setFooter("Creator's Command - " + message.author.username, message.author.avatarURL);
     message.channel.send(botembed);
