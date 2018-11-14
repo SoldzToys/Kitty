@@ -95,13 +95,13 @@ message.channel.send(catembed);
 }   
 	
 	     if (message.content.startsWith(`${prefix}meme`)) { 
-	let imgflip = "https://image.ibb.co/iYv3h0/Imgflip-Logo.png";
+	let imgfp = "https://image.ibb.co/iYv3h0/Imgflip-Logo.png";
       let { body } = await request.get(`https://api-to.get-a.life/meme`);
     let memeembed = new Discord.RichEmbed()
     .setTitle('Meme 😂')
     .setColor("#7289da")
     .setImage(body.url)
-    .setFooter(`Powered By Imgflip", imgflip)
+    .setFooter("Powered By Imgflip", imgfp)
     .setTimestamp();
     message.channel.send(memeembed);
      
