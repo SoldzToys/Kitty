@@ -62,7 +62,7 @@ if (message.content.toLowerCase().startsWith(`${prefix}info`)) {
     .addField("Date Of Creation", client.user.createdAt.toLocaleString(), true)
     .addField("Guilds", client.guilds.size, true) 
     .addField("Users", client.users.size, true)
-    .addField("Invite Me To Your Server", "https://bit.ly/2CJLh83", true)
+    .addField("Invite Me To Your Server", "https://bit.ly/2OHoBqR", true)
     .setFooter("Made By Soldz (CF)#6819")
     .setTimestamp();
     return message.channel.send(botembed);
