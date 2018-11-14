@@ -13,7 +13,7 @@ client.user.setActivity('with her +help string toy');
 
 });
 
-client.on('message', async (message, member) => {
+client.on('message', async (message, guild) => {
   
 if (message.content.toLowerCase().startsWith(`${prefix}ping`)) {
         message.channel.send('🏓 **Pong!** Your ping is `' + `${Date.now() - message.createdTimestamp}` + ' ms`');
@@ -139,7 +139,6 @@ message.channel.send(catembed);
 	      if (message.content.toLowerCase().startsWith(`${prefix}serverlist`)) {
       let bicon = client.user.displayAvatarURL;
     let string = '';
-   let guild = member.guild;
     client.guilds.forEach(guild => {
     string += guild.name + '\n';})
     let bt = client.user.username;  
