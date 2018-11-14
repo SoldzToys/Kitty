@@ -13,7 +13,7 @@ client.user.setActivity('with her +help string toy');
 
 });
 
-client.on('message', async (message) => {
+client.on('message', async (message, member) => {
   
 if (message.content.toLowerCase().startsWith(`${prefix}ping`)) {
         message.channel.send('🏓 **Pong!** Your ping is `' + `${Date.now() - message.createdTimestamp}` + ' ms`');
@@ -139,13 +139,14 @@ message.channel.send(catembed);
 	      if (message.content.toLowerCase().startsWith(`${prefix}serverlist`)) {
       let bicon = client.user.displayAvatarURL;
     let string = '';
+   let guild = member.guild;
     client.guilds.forEach(guild => {
     string += guild.name + '\n';})
-    let bt = client.user.username;
+    let bt = client.user.username;  let guild = member.guild;
     let botembed = new Discord.RichEmbed()
         .setAuthor(`Amount Of Servers: [${client.guilds.size}] `, client.user.displayAvatarURL)
         .setColor("#7289da")
-        .addField("Servers In", `${string} - ID: ${client.guild.id}`)
+        .addField("Servers In", `${string} - ID: ${guild.id}`)
         .setTimestamp()
         .setFooter("Creator's Command - " + message.author.username, message.author.avatarURL);
     message.channel.send(botembed);
