@@ -23,7 +23,7 @@ if (message.content.startsWith(`${prefix}ping`)) {
 if (message.content.startsWith(`${prefix}hello`)) {
     message.channel.send(`Meow meow~!`);
    }
-if (message.content.startsWith(`${prefix}lizard`)) {
+if (message.content.startsWith(`${prefix}help`)) {
         let dogembed = new Discord.RichEmbed()
         .setTitle("Kitty's Commands 🐱")
         .setDescription("Commands: +cat, +lizard, +bunny, +panda, +rpanda, +bird, +fox, +hello, +meow, +meme, +ping, +info, +say")
