@@ -143,10 +143,8 @@ message.channel.send(catembed);
       randombunny(api).then(api => {
            const theirembed = new Discord.RichEmbed()
             .setTitle("Bunny 🐇")
-            .setColor("#FFC0CB")
+	    .setColor("#7289da")
             .setImage(api)
-	     .setColor("#7289da")
-            .setTimestamp();
       message.channel.send(theirembed)
       })
 }
