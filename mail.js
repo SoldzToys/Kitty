@@ -42,7 +42,7 @@ if (message.content.startsWith(`${prefix}meow`)) {
 		  let botmessage = args.join(' ')
 		  let player = message.mentions.members.first() || message.member
                   let user = player.user
-		  if args.length > 0 return;
+		  if(!args[0]) return;
 		const sayembed = new Discord.RichEmbed()
 		.setTitle(`${botmessage}`)
                .setColor("#7289da")
