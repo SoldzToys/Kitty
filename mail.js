@@ -48,7 +48,7 @@ if (message.content.startsWith(`${prefix}meow`)) {
 	       .setFooter(`Requested By ${user.tag}`)
 		 return message.channel.send(sayembed)
 	 }
-if (message.content.toLowerCase().startsWith(`${prefix}info`)) {
+if (message.content.startsWith(`${prefix}info`)) {
 
     let bicon = client.user.displayAvatarURL;
     let botembed = new Discord.RichEmbed()
