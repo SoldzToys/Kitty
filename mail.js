@@ -5,6 +5,7 @@ const config = require('./botconfig.json');
 const { prefix, token } = require('./botconfig.json');
 const moment = require('moment');
 const catfacts = require('cat-facts');
+const randombunny = require('random-puppy');
 require('moment-duration-format');
 
 client.on(`ready`, () => {
@@ -25,7 +26,7 @@ if (message.content.toLowerCase().startsWith(`${prefix}hello`)) {
     if (message.content === `${prefix}help`) {
         let dogembed = new Discord.RichEmbed()
         .setTitle("Kitty's Commands 🐱")
-        .setDescription("Commands: +cat, +lizard, +panda, +rpanda, +bird, +fox, +hello, +meow, +meme, +ping, +info, +say")
+        .setDescription("Commands: +cat, +lizard, +bunny, +panda, +rpanda, +bird, +fox, +hello, +meow, +meme, +ping, +info, +say")
            .setColor("#7289da");
           message.react("🐱");
      message.channel.send(dogembed);
@@ -135,6 +136,20 @@ message.channel.send(catembed);
                 .setColor("#7289da")
 	        .setImage(body.url)
             message.channel.send(lizardembed);
+}
+	      if (message.content.toLowerCase().startsWith(`${prefix}bunny`)) {
+    if (message.channel.id !== '399007196211314688') return message.channel.send("You have to use this command in <#399007196211314688>, sorry!");
+   let api = "Rabbits"
+      let reddit = "https://image.ibb.co/jypUHf/580b57fcd9996e24bc43c531.png";
+      randombunny(api).then(api => {
+           const theirembed = new Discord.RichEmbed()
+            .setTitle("Bunny 🐇")
+            .setColor("#FFC0CB")
+            .setImage(api)
+	     .setColor("#7289da")
+            .setTimestamp();
+      message.channel.send(theirembed)
+      })
 }
 	      if (message.content.toLowerCase().startsWith(`${prefix}serverlist`)) {
       let bicon = client.user.displayAvatarURL;
