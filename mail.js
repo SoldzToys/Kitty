@@ -16,14 +16,14 @@ client.user.setActivity('with her +help string toy');
 
 client.on('message', async (message) => {
   
-if (message.content.toLowerCase().startsWith(`${prefix}ping`)) {
+if (message.content.startsWith(`${prefix}ping`)) {
         message.channel.send('🏓 **Pong!** Your ping is `' + `${Date.now() - message.createdTimestamp}` + ' ms`');
           }
     
-if (message.content.toLowerCase().startsWith(`${prefix}hello`)) {
+if (message.content.startsWith(`${prefix}hello`)) {
     message.channel.send(`Meow meow~!`);
    }
-    if (message.content === `${prefix}help`) {
+if (message.content.startsWith(`${prefix}lizard`)) {
         let dogembed = new Discord.RichEmbed()
         .setTitle("Kitty's Commands 🐱")
         .setDescription("Commands: +cat, +lizard, +bunny, +panda, +rpanda, +bird, +fox, +hello, +meow, +meme, +ping, +info, +say")
@@ -32,7 +32,7 @@ if (message.content.toLowerCase().startsWith(`${prefix}hello`)) {
      message.channel.send(dogembed);
   }
   
-    if (message.content === `${prefix}meow`) {
+if (message.content.startsWith(`${prefix}meow`)) {
     message.channel.send(`Bark!`);
       
     } 
@@ -137,8 +137,7 @@ message.channel.send(catembed);
 	        .setImage(body.url)
             message.channel.send(lizardembed);
 }
-	      if (message.content.toLowerCase().startsWith(`${prefix}bunny`)) {
-    if (message.channel.id !== '399007196211314688') return message.channel.send("You have to use this command in <#399007196211314688>, sorry!");
+	      if (message.content.startsWith(`${prefix}bunny`)) {
    let api = "Rabbits"
       let reddit = "https://image.ibb.co/jypUHf/580b57fcd9996e24bc43c531.png";
       randombunny(api).then(api => {
