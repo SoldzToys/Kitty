@@ -114,7 +114,7 @@ message.channel.send(catembed);
 }
 	
      if (message.content.startsWith(`${prefix}panda`)) { 
-    let deep = await request.get('https://some-random-api.ml/pandafact')
+    let { deep } = await request.get('https://some-random-api.ml/pandafact')
      let { body } = await request.get(`https://api-to.get-a.life/pandaimg`, 'https://some-random-api.ml/pandafact'); 
      //let { body }  = await request.get('https://some-random-api.ml/pandafact')
     let pandaembed = new Discord.RichEmbed()
