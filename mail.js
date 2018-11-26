@@ -49,6 +49,7 @@ if (message.content.startsWith(`${prefix}meow`)) {
 	       .setFooter(`Requested By ${user.tag}`)
 		 return message.channel.send(sayembed)
 	 }
+	
 if (message.content.startsWith(`${prefix}info`)) {
 
     let bicon = client.user.displayAvatarURL;
@@ -113,9 +114,11 @@ message.channel.send(catembed);
 }
 	
      if (message.content.startsWith(`${prefix}panda`)) { 
-      let { body } = await request.get(`https://api-to.get-a.life/pandaimg`);
+      let { body } = await request.get(`https://api-to.get-a.life/pandaimg`); 
+     let fact = await request.get(`https://some-random-api.ml/pandafact`)
     let pandaembed = new Discord.RichEmbed()
     .setTitle('Panda 🐼')
+    .setDescription(fact) 
     .setColor("#7289da")
     .setImage(body.link);
     message.channel.send(pandaembed);
