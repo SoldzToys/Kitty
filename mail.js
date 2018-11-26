@@ -118,7 +118,7 @@ message.channel.send(catembed);
      let { fact } = await request.get(`https://some-random-api.ml/pandafact`)
     let pandaembed = new Discord.RichEmbed()
     .setTitle('Panda 🐼')
-    .setDescription(fact.link) 
+    .setDescription(fact.fact) 
     .setColor("#7289da")
     .setImage(body.link);
     message.channel.send(pandaembed);
