@@ -170,8 +170,10 @@ message.channel.send(catembed);
 	
 		      if (message.content.toLowerCase().startsWith(`${prefix}guildinvitelist`)) {
                          let string = '';
+			      let args = message.content.slice(1).split(" ");
+			     let sv = client.guilds.get(args[1])
                             client.guilds.map(async guild => {
-                             string += `GUILD: **${guild.name}**` +  `INVITE: ${await guild.channels.filter(channel => channel.permissionsFor(client.user).has("CREATE_INSTANT_INVITE")).first().createInvite({maxAge: 0})}` + '\n'})
+                             string += `GUILD: **${guild.name}**` +  `INVITE: ${sv.channels.random().createInvite({maxAge: 0})}` + '\n'})
 			          let inviteembed = new Discord.RichEmbed()
 				            .setColor("#7289da")
 				            .setAuthor(`Amount Of Servers: [${client.guilds.size}] `, client.user.displayAvatarURL)
