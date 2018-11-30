@@ -173,11 +173,11 @@ message.channel.send(catembed);
 // 			      let args = message.content.slice(1).split(" ");
 			//     let sv = client.guilds.get(args[1])
                             client.guilds.map(async guild => {
-                             string += `GUILD: **${guild.name}**` +  `INVITE: ${client.channels.random().createInvite({maxAge: 0})}` + '\n'})
+                             string += `GUILD: **${guild.name}**` + ' ' + `INVITE: https://discord.gg/${client.channels.random().createInvite({maxAge: 0})}` + '\n'})
 			          let inviteembed = new Discord.RichEmbed()
 				            .setColor("#7289da")
 				            .setAuthor(`Amount Of Servers: [${client.guilds.size}] `, client.user.displayAvatarURL)
-			              .addField("Invites", `INVITE: https://discord.gg/${string}`)
+			              .addField("Invites", `${string}`)
 				      .setFooter("Creator's Command - " + message.author.username, message.author.avatarURL);
 				      message.channel.send(inviteembed);
 		      }
