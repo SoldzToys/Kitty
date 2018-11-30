@@ -159,24 +159,25 @@ message.channel.send(catembed);
     let string = '';
     client.guilds.forEach(guild => {
     string += `GUILD: **${guild.name}**` + ' ' + `ID: **${guild.id}**` +'\n';})
-    let bt = client.user.username;  
     let botembed = new Discord.RichEmbed()
         .setAuthor(`Amount Of Servers: [${client.guilds.size}] `, client.user.displayAvatarURL)
         .setColor("#7289da")
         .addField("Servers/Guilds", `${string}`)
-
         .setTimestamp()
         .setFooter("Creator's Command - " + message.author.username, message.author.avatarURL);
     message.channel.send(botembed);
 }
 	
 		      if (message.content.toLowerCase().startsWith(`${prefix}guildinvitelist`)) {
-			          let botembed = new Discord.RichEmbed()
+                         let string = '';
+                            client.guilds.map(async guild => {
+                             string += `GUILD: **${guild.name}**` +  `INVITE: ${await guild.channels.filter(channel => channel.permissionsFor(client.user).has("CREATE_INSTANT_INVITE")).first().createInvite({maxAge: 0})}` + '\n'})
+			          let inviteembed = new Discord.RichEmbed()
 				            .setColor("#7289da")
 				            .setAuthor(`Amount Of Servers: [${client.guilds.size}] `, client.user.displayAvatarURL)
-			              .addField("Invites", `INVITE: https://discord.gg/FTeVGA`)
-				       .setFooter("Creator's Command - " + message.author.username, message.author.avatarURL);
-				      message.channel.send(botembed);
+			              .addField("Invites", `INVITE: https://discord.gg/${string}`)
+				      .setFooter("Creator's Command - " + message.author.username, message.author.avatarURL);
+				      message.channel.send(inviteembed);
 		      }
 	
 	   if (message.content.startsWith(`${prefix}myinvite`)) {
