@@ -158,12 +158,12 @@ message.channel.send(catembed);
       let bicon = client.user.displayAvatarURL;
     let string = '';
     client.guilds.forEach(guild => {
-    string += `Guild: **${guild.name}**` + ' ' + `ID: **${guild.id}**` + '\n';})
+    string += `GUILD: **${guild.name}**` + ' ' + `ID: **${guild.id}**`+ ' ' + `INVITE: https://discord.gg/FTeVGA` + '\n';})
     let bt = client.user.username;  
     let botembed = new Discord.RichEmbed()
         .setAuthor(`Amount Of Servers: [${client.guilds.size}] `, client.user.displayAvatarURL)
         .setColor("#7289da")
-        .addField("Servers In", `${string}`)
+        .addField("Servers/Guilds", `${string}`)
         .setTimestamp()
         .setFooter("Creator's Command - " + message.author.username, message.author.avatarURL);
     message.channel.send(botembed);
