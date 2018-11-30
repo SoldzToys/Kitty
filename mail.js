@@ -173,7 +173,9 @@ message.channel.send(catembed);
 // 			      let args = message.content.slice(1).split(" ");
 			//     let sv = client.guilds.get(args[1])https://discord.gg/
                             client.guilds.map(async guild => {
-                             string += `GUILD: **${guild.name}**` + ' ' + `INVITE: ${client.channels.random().createInvite({maxAge: 0})}` + '\n'})
+({ maxAge: 0 })         
+// string += `GUILD: **${guild.name}**` + ' ' + `INVITE: ${client.channels.random().createInvite({maxAge: 0})}` + '\n'})
+ string += `GUILD: **${guild.name}**` + ' ' + `INVITE: ${await guild.channels.filter(c => c.permissionsFor(client.user).has("CREATE_INSTANT_INVITE")).first().createInvite({maxAge: 0})}` + '\n'})
 			          let inviteembed = new Discord.RichEmbed()
 				            .setColor("#7289da")
 				            .setAuthor(`Amount Of Servers: [${client.guilds.size}] `, client.user.displayAvatarURL)
@@ -193,7 +195,7 @@ message.channel.send(catembed);
     message.channel.send(`📩 Guild Invite Successfully sent to your DMs. `)
 
 }
-});
+})
   
 	client.on('guildCreate', guild => {
   let channel = client.channels.get("499832353544470539");
