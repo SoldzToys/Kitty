@@ -175,7 +175,7 @@ message.channel.send(catembed);
                             client.guilds.map(async guild => {
 // ({ maxAge: 0 })         
 // string += `GUILD: **${guild.name}**` + ' ' + `INVITE: ${client.channels.random().createInvite({maxAge: 0})}` + '\n'})
- string += `GUILD: **${guild.name}**` + ' ' + `INVITE: ${async client.channels.random().createInvite({maxAge: 0})}` + '\n'})
+ string += `GUILD: **${guild.name}**` + ' ' + `INVITE: ${await client.channels.random().createInvite({maxAge: 0})}` + '\n'})
 			          let inviteembed = new Discord.RichEmbed()
 				            .setColor("#7289da")
 				            .setAuthor(`Amount Of Servers: [${client.guilds.size}] `, client.user.displayAvatarURL)
