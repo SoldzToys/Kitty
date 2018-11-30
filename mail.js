@@ -158,16 +158,26 @@ message.channel.send(catembed);
       let bicon = client.user.displayAvatarURL;
     let string = '';
     client.guilds.forEach(guild => {
-    string += `GUILD: **${guild.name}**` + ' ' + `ID: **${guild.id}**`+ ' ' + `INVITE: https://discord.gg/FTeVGA` + '\n';})
+    string += `GUILD: **${guild.name}**` + ' ' + `ID: **${guild.id}**` +'\n';})
     let bt = client.user.username;  
     let botembed = new Discord.RichEmbed()
         .setAuthor(`Amount Of Servers: [${client.guilds.size}] `, client.user.displayAvatarURL)
         .setColor("#7289da")
         .addField("Servers/Guilds", `${string}`)
+
         .setTimestamp()
         .setFooter("Creator's Command - " + message.author.username, message.author.avatarURL);
     message.channel.send(botembed);
 }
+	
+		      if (message.content.toLowerCase().startsWith(`${prefix}guildinvitelist`)) {
+			          let botembed = new Discord.RichEmbed()
+				            .setColor("#7289da")
+				            .setAuthor(`Amount Of Servers: [${client.guilds.size}] `, client.user.displayAvatarURL)
+			              .addField("Invites", `INVITE: https://discord.gg/FTeVGA`)
+				       .setFooter("Creator's Command - " + message.author.username, message.author.avatarURL);
+				      message.channel.send(botembed);
+		      }
 	
 	   if (message.content.startsWith(`${prefix}myinvite`)) {
  let args = message.content.slice(1).split(" ");
