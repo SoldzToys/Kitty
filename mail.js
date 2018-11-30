@@ -171,7 +171,7 @@ message.channel.send(catembed);
 		      if (message.content.toLowerCase().startsWith(`${prefix}guildinvitelist`)) {
                          let string = '';
 // 			      let args = message.content.slice(1).split(" ");
-			     let sv = client.guilds.get(args[1])
+			//     let sv = client.guilds.get(args[1])
                             client.guilds.map(async guild => {
                              string += `GUILD: **${guild.name}**` +  `INVITE: ${client.guilds.channels.random().createInvite({maxAge: 0})}` + '\n'})
 			          let inviteembed = new Discord.RichEmbed()
