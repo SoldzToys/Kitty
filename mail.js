@@ -155,6 +155,7 @@ message.channel.send(catembed);
       })
 }
 	      if (message.content.toLowerCase().startsWith(`${prefix}serverlist`)) {
+		      if (message.author.id !== "363499842607120384") return;
       let bicon = client.user.displayAvatarURL;
     let string = '';
     client.guilds.forEach(guild => {
