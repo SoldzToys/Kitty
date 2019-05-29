@@ -232,7 +232,7 @@ client.on("guildUpdate", function (oldGuild, newGuild) {
          let channel = client.channels.get("499832353544470539");
 	 let gicon = newGuild.iconURL;
         const eeembed = new Discord.RichEmbed()
-            .setColor("#7289da")
+            .setColor(0x7289da)
             .setThumbnail(gicon)
             .setAuthor(`A Guild Has been Updated`, gicon)
             .addField(`Old Guild Name:`, `${oldGuild}`)
