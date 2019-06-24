@@ -21,7 +21,7 @@ if (message.content.startsWith(`${prefix}ping`)) {
           }
     
 if (message.content.startsWith(`${prefix}hello`)) {
-    message.channel.send(`Meow meow~!`);
+    message.channel.send(`Meow meow~~!`);
    }
 if (message.content.startsWith(`${prefix}help`)) {
         let dogembed = new Discord.RichEmbed()
