@@ -9,7 +9,7 @@ const randombunny = require('random-puppy');
 require('moment-duration-format');
 
 client.on(`ready`, () => {
-  console.log(`I am on!`);
+  console.log(`I am on!!`);
 client.user.setActivity('with her +help string toy');
 
 });
